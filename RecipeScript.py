@@ -12,10 +12,6 @@ def create_csv(csv_file):
             pass
 
 
-def view_recipe(recipe_reader):
-    recipe_name = input("Please enter the name of the recipe:\n> ")
-    print(recipe_name)
-
 print("[Not sure what to put as the welcome text yet]")
 while True:
     print("Please enter a .csv file to begin (\"quit\" to quit the program).")
@@ -34,8 +30,8 @@ while True:
                 user_input = input("> ")
                 if user_input == "quit":
                     break
-                elif user_input == "view":
-                    view_recipe(recipe_reader)
+                #elif user_input == "view":
+                    #view_recipe(recipe_reader)
     except:
         if csv_file.endswith(".csv"):
             print("Error: That .csv file does not exist, would you like to create a new one? [Y/N] (\"quit\" to quit the program).")
@@ -54,13 +50,4 @@ while True:
             pass
 
 
-
-'''
-while user_input != "quit":
-    if user_input == "add":
-    elif user_input == "remove":
-    elif user_input == "view":
-    elif 
-    pass
-'''
 print("[Not sure what to put as the closing text yet]")
