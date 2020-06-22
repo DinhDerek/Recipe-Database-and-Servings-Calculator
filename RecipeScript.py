@@ -1,37 +1,39 @@
 import csv
+from add_recipe import add_recipe
+
 
 def create_csv(csv_file):
     while True:
         try:
             new_csv = open(csv_file, mode='w+')
             new_csv.close()
-            print("New .csv file successfully created.")
+            print("New .csv file successfully created.\n")
             break
         except:
             print("Invalid character found in the file name, please try again.\n")
+            csv_file = input("Please enter a name for the new .csv file.\n> ")
             pass
 
 
 print("[Not sure what to put as the welcome text yet]")
 while True:
-    print("Please enter a .csv file to begin (\"quit\" to quit the program).")
-    csv_file = input("> ")
+    csv_file = input("Please enter a .csv file to begin (\"quit\" to quit the program):\n> ")
     if csv_file == "quit":
         break
     
     try:
-        with open(csv_file, newline='') as recipe_book:
-            recipe_reader = csv.reader(recipe_book)
-            for recipe in recipe_reader:
-                recipe = [ingredient for ingredient in recipe if ingredient != '']
-                #print(recipe)
-            while True:
-                print("Please select one of the following options:\n  add - Add a new recipe\n  remove - Remove a recipe\n  view - View a recipe\n  calculate - Calculate servings for a recipe\n  quit - Quit the program\n  ")
-                user_input = input("> ")
-                if user_input == "quit":
-                    break
-                #elif user_input == "view":
-                    #view_recipe(recipe_reader)
+        recipe_book = open(csv_file, 'r+')
+        recipe_book.close()
+        while True:
+            user_input = input("Please select one of the following options:\n  add - Add a new recipe\n  remove - Remove a recipe\n  view - View a recipe\n  calculate - Calculate servings for a recipe\n  quit - Quit the program\n> ")
+            if user_input == "quit":
+                break
+            elif user_input == "add":
+                add_recipe(csv_file)
+            #elif user_input == "view":
+                #view_recipe(recipe_reader)
+            print("\n")
+        break
     except:
         if csv_file.endswith(".csv"):
             print("Error: That .csv file does not exist, would you like to create a new one? [Y/N] (\"quit\" to quit the program).")
