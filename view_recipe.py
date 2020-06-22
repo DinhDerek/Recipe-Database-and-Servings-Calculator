@@ -9,7 +9,7 @@ def view_recipe(csv_file):
         if recipe.lower() in all_recipes:
             break
         else:
-            print("Error: That recipe does not exist, would you like to create a new one? [Y/N] (\"cancel\" to cancel).")
+            print("Error: That recipe does not exist, would you like to create it? [Y/N] (\"cancel\" to cancel).")
             recipe_input = input("> ")
             if recipe_input == "cancel":
                 return

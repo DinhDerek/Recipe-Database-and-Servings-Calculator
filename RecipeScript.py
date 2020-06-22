@@ -1,5 +1,6 @@
 import csv
 from add_recipe import add_recipe
+from remove_recipe import remove_recipe
 from view_recipe import view_recipe
 
 def create_csv(csv_file):
@@ -25,11 +26,13 @@ while True:
         recipe_book = open(csv_file, 'r+')
         recipe_book.close()
         while True:
-            user_input = input("Please select one of the following options:\n  add - Add a new recipe\n  remove - Remove a recipe\n  view - View a recipe\n  calculate - Calculate servings for a recipe\n  quit - Quit the program\n> ")
+            user_input = input("Please select one of the following options:\n  add - Add a new recipe\n  remove - Remove a recipe\n  view - View a recipe\n  displayall - Display all recipe names\n  calculate - Calculate servings for a recipe\n  quit - Quit the program\n> ")
             if user_input == "quit":
                 break
             elif user_input == "add":
                 add_recipe(csv_file)
+            elif user_input == "remove":
+                remove_recipe(csv_file)
             elif user_input == "view":
                 view_recipe(csv_file)
             print("\n")
