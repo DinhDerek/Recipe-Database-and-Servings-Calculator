@@ -1,6 +1,6 @@
 import csv
 from add_recipe import add_recipe
-
+from view_recipe import view_recipe
 
 def create_csv(csv_file):
     while True:
@@ -30,8 +30,8 @@ while True:
                 break
             elif user_input == "add":
                 add_recipe(csv_file)
-            #elif user_input == "view":
-                #view_recipe(recipe_reader)
+            elif user_input == "view":
+                view_recipe(csv_file)
             print("\n")
         break
     except:
