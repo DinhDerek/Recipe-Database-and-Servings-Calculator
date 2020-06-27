@@ -34,7 +34,7 @@ def view_recipe(csv_file):
             else:
                 print("No recipe found at index no.",recipe,"There are only", len(all_recipes),"recipes in this .csv file. Please input a valid index.")
         else:
-            print("Error: That recipe does not exist, would you like to create a new one? [Y/N] (\"cancel\" to cancel).")
+            print("Error: That recipe does not exist, would you like to create it? [Y/N] (\"cancel\" to cancel).")
             recipe_input = input("> ")
             if recipe_input == "cancel":
                 return
